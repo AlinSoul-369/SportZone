@@ -1,0 +1,132 @@
+.users-page .action-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.users-page .action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.users-page .table-row-enter {
+  animation: slideInRight 0.3s ease forwards;
+  opacity: 0;
+}
+
+.users-page .table-row-enter:nth-child(1) { animation-delay: 0.05s; }
+.users-page .table-row-enter:nth-child(2) { animation-delay: 0.10s; }
+.users-page .table-row-enter:nth-child(3) { animation-delay: 0.15s; }
+.users-page .table-row-enter:nth-child(4) { animation-delay: 0.20s; }
+.users-page .table-row-enter:nth-child(5) { animation-delay: 0.25s; }
+
+/* ✅ Modern Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-modern {
+  background: white;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease;
+}
+
+.modal-modern.modal-large {
+  max-width: 750px;
+}
+
+.modal-modern-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 24px 28px 16px 28px;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafbfc;
+}
+
+.modal-modern-body {
+  padding: 28px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.modal-modern-footer {
+  padding: 16px 28px 24px 28px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background: #fafbfc;
+}
+
+.btn-close-custom {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  line-height: 1;
+}
+
+.btn-close-custom:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Modal Scroll */
+.modal-modern-body::-webkit-scrollbar {
+  width: 4px;
+}
+
+.modal-modern-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal-modern-body::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+/* Input Group Styling */
+.users-page .input-group .form-control:focus {
+  border-color: #66D10F;
+  box-shadow: 0 0 0 3px rgba(102, 209, 15, 0.15);
+}
+
+.users-page .input-group .btn:focus {
+  box-shadow: 0 0 0 3px rgba(4, 30, 66, 0.15);
+}

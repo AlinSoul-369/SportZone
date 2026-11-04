@@ -1,0 +1,38 @@
+.stat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+.sparkline {
+  opacity: 0.7;
+}
+
+.sparkline path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.home-page .card {
+  border-radius: 16px !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-page .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06) !important;
+}
+
+/* RTL Support */
+[dir="rtl"] .home-page .text-end {
+  text-align: left !important;
+}
+
+[dir="rtl"] .home-page .ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}

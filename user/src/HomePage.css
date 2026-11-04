@@ -1,0 +1,603 @@
+/* Home page sections only — shared nav/footer/buttons live in Layout.css */
+
+.homepage {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - var(--navbar-height));
+  max-height: 820px;
+  background-color: var(--color-tertiary);
+  display: flex;
+  align-items: center;
+  padding-top: var(--navbar-height);
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0% 100%);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  mix-blend-mode: luminosity;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--color-tertiary), rgba(0, 0, 0, 0.6), transparent);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 48px var(--margin-desktop);
+  width: 100%;
+}
+
+.hero-content > * {
+  max-width: 672px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 16px;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--color-on-tertiary);
+  margin-bottom: 32px;
+}
+
+.hero-title-highlight {
+  color: var(--color-secondary);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Quick access */
+.quick-access {
+  position: relative;
+  margin-top: -64px;
+  z-index: 20;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--margin-desktop);
+  margin-bottom: 80px;
+}
+
+.quick-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+}
+
+@media (min-width: 768px) {
+  .quick-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.quick-card {
+  background-color: var(--color-surface);
+  padding: 32px;
+  border: 1px solid var(--color-outline-variant);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.quick-card:hover {
+  box-shadow: 8px 8px 0 0 var(--color-on-secondary);
+  transform: translate(-4px, -4px);
+}
+
+.quick-icon {
+  width: 64px;
+  height: 64px;
+  background-color: #ebeef0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.quick-icon .material-symbols-outlined {
+  font-size: 36px;
+  font-variation-settings: 'FILL' 1;
+}
+
+.quick-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin-bottom: 8px;
+}
+
+.quick-desc {
+  color: var(--color-on-surface-variant);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.quick-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-secondary);
+  font-weight: 700;
+  transition: gap 0.2s;
+}
+
+.quick-card:hover .quick-link {
+  gap: 16px;
+}
+
+/* Featured pitches */
+.featured-pitches {
+  max-width: var(--container-max);
+  margin: 0 auto 80px;
+  padding: 0 var(--margin-desktop);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 48px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.section-underline {
+  height: 4px;
+  width: 96px;
+  background-color: var(--color-secondary);
+}
+
+.view-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.view-all:hover {
+  color: var(--color-secondary);
+}
+
+.pitch-card {
+  background-color: var(--color-tertiary);
+  border: 1px solid var(--color-outline-variant);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+.pitch-card:hover {
+  box-shadow: 8px 8px 0 0 var(--color-on-secondary);
+  transform: translate(-4px, -4px);
+}
+
+@media (min-width: 768px) {
+  .pitch-card {
+    flex-direction: row;
+  }
+}
+
+.pitch-image {
+  position: relative;
+  min-height: 320px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .pitch-image {
+    width: 55%;
+    min-height: 400px;
+  }
+}
+
+.pitch-image-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+.pitch-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  padding: 6px 16px;
+  z-index: 10;
+}
+
+.pitch-info {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--color-tertiary);
+  color: var(--color-on-tertiary);
+}
+
+@media (min-width: 768px) {
+  .pitch-info {
+    width: 45%;
+  }
+}
+
+.pitch-info .w-full {
+  width: 100%;
+  text-align: center;
+}
+
+.pitch-name {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.pitch-desc {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
+
+.pitch-slots {
+  color: var(--color-secondary);
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+/* Trending gear */
+.trending-gear {
+  background-color: #f1f4f6;
+  padding: 80px 0;
+  margin-bottom: 80px;
+  overflow: hidden;
+}
+
+.trending-gear .container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--margin-desktop);
+}
+
+.trending-gear .section-header {
+  max-width: var(--container-max);
+  margin: 0 auto 48px;
+  padding: 0 var(--margin-desktop);
+}
+
+.gear-scroll {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0 var(--margin-desktop) 32px;
+  justify-content: center;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.gear-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-outline-variant);
+  padding: 20px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 360px;
+  width: 100%;
+}
+
+.gear-card:hover {
+  box-shadow: 8px 8px 0 0 var(--color-on-secondary);
+  transform: translate(-4px, -4px);
+}
+
+.gear-image {
+  height: 220px;
+  background-color: #e5e9eb;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.gear-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.gear-category {
+  font-family: var(--font-label);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  margin-bottom: 4px;
+}
+
+.gear-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 8px;
+}
+
+.gear-price {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 16px;
+}
+
+.gear-card .btn-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+/* Predictor banner */
+.predictor-banner {
+  max-width: var(--container-max);
+  margin: 0 auto 80px;
+  padding: 0 var(--margin-desktop);
+  position: relative;
+}
+
+.predictor-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  overflow: hidden;
+  min-height: 100%;
+}
+
+.predictor-bg-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+}
+
+.predictor-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-tertiary), transparent);
+}
+
+.predictor-content {
+  position: relative;
+  z-index: 10;
+  background-color: var(--color-tertiary);
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 48px;
+  gap: 48px;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+@media (min-width: 768px) {
+  .predictor-content {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
+}
+
+.predictor-text {
+  max-width: 576px;
+}
+
+.predictor-title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  text-transform: uppercase;
+  color: var(--color-on-tertiary);
+  margin-bottom: 16px;
+}
+
+.predictor-highlight {
+  color: var(--color-secondary);
+}
+
+.predictor-desc {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 32px;
+}
+
+.predictor-vs {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  flex-shrink: 0;
+}
+
+.vs-team {
+  text-align: center;
+}
+
+.vs-badge {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 900;
+  margin: 0 auto 12px;
+}
+
+.vs-badge.dark {
+  background-color: var(--color-on-tertiary);
+  color: var(--color-tertiary);
+}
+
+.vs-badge.green {
+  background-color: var(--color-secondary);
+  color: var(--color-on-secondary);
+}
+
+.vs-team p {
+  color: var(--color-on-tertiary);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.vs-divider {
+  color: var(--color-on-tertiary);
+  font-size: 36px;
+  font-weight: 900;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 520px;
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
+  }
+
+  .hero-content,
+  .quick-access,
+  .featured-pitches,
+  .predictor-banner,
+  .trending-gear .section-header {
+    padding-left: var(--margin-mobile);
+    padding-right: var(--margin-mobile);
+  }
+
+  .quick-access {
+    margin-top: -40px;
+    margin-bottom: 48px;
+  }
+
+  .pitch-info {
+    padding: 24px;
+  }
+
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gear-scroll {
+    padding: 0 var(--margin-mobile);
+  }
+
+  .predictor-content {
+    padding: 24px;
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+  }
+
+  .predictor-vs {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+    width: 100%;
+  }
+
+  .vs-divider {
+    font-size: 24px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 24px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,394 @@
+/* ============================================
+   📦 IMPORT FONTS
+   ============================================ */
+   
+/* ✅ الخطوط الرياضية الجديدة */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Bebas+Neue&display=swap');
+
+/* ✅ Material Symbols */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+/* ============================================
+   🎨 ROOT VARIABLES
+   ============================================ */
+
+:root {
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+  --font-display: 'Bebas Neue', cursive;
+  --font-icons: 'Material Symbols Outlined';
+  
+  --color-primary: #041E42;
+  --color-success: #66D10F;
+  --color-background: #f7f9fc;
+  --color-surface: #ffffff;
+  --color-text: #191c1e;
+  --color-text-secondary: #44474e;
+}
+
+/* ============================================
+   🔤 GLOBAL TYPOGRAPHY
+   ============================================ */
+
+/* ✅ تطبيق الخطوط على الجسم */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ✅ العناوين الرئيسية (Oswald - رياضي قوي) */
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6,
+.headline-lg, .headline-md, .headline-sm {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ✅ العناوين الكبيرة جداً (Bebas Neue - جريء) */
+.display-1, .display-2, .display-3,
+h1.display-6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+/* ✅ النصوص الصغيرة والجداول */
+small, .small, .text-secondary, 
+.table td, .table th,
+.form-label, .badge {
+  font-family: var(--font-body);
+}
+
+/* ✅ الأزرار (خط رياضي) */
+.btn, .btn-lg, .btn-sm {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ✅ روابط التنقل */
+.nav-link, .sidebar-item {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* ============================================
+   🃏 MATERIAL ICONS
+   ============================================ */
+
+.material-symbols-outlined {
+  font-family: var(--font-icons);
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: 'liga';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+/* ============================================
+   🧹 RESET
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   🎯 BOOTSTRAP OVERRIDES
+   ============================================ */
+
+.btn {
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: scale(0.96) !important;
+}
+
+.card {
+  border: none !important;
+  transition: all 0.3s ease;
+}
+
+.form-control,
+.form-select {
+  border-color: #e0e3e6;
+  transition: all 0.3s ease;
+  font-family: var(--font-body);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(4, 30, 66, 0.1);
+}
+
+/* ============================================
+   📜 SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4c6cf;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #74777f;
+}
+
+/* ============================================
+   ✨ TRANSITIONS
+   ============================================ */
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   🎨 TEXT COLORS
+   ============================================ */
+
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.text-success {
+  color: var(--color-success) !important;
+}
+
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.bg-success {
+  background-color: var(--color-success) !important;
+}
+
+/* ============================================
+   🏷️ SIDEBAR
+   ============================================ */
+
+.sidebar-title {
+  font-family: var(--font-display);
+  letter-spacing: 1.5px;
+}
+
+.sidebar-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   📊 STAT CARDS
+   ============================================ */
+
+.stat-card .stat-value {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  letter-spacing: 0.5px;
+}
+
+.stat-card .stat-label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   ⚽ MATCH CARDS
+   ============================================ */
+
+.match-card .team-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.match-card .match-score {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.match-card .match-status {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   🛍️ PRODUCTS TABLE
+   ============================================ */
+
+.product-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+.product-sku {
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+/* ============================================
+   👤 USER TABLE
+   ============================================ */
+
+.user-name {
+  font-family: var(--font-heading);
+  font-weight: 500;
+}
+
+/* ============================================
+   🏠 DASHBOARD
+   ============================================ */
+
+.dashboard-title {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.dashboard-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+/* ============================================
+   📱 RTL SUPPORT
+   ============================================ */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .pe-3 {
+  padding-right: 0 !important;
+  padding-left: 1rem !important;
+}
+
+[dir="rtl"] .ps-3 {
+  padding-left: 0 !important;
+  padding-right: 1rem !important;
+}
+
+[dir="rtl"] .start-0 {
+  left: auto !important;
+  right: 0 !important;
+}
+
+[dir="rtl"] .end-0 {
+  right: auto !important;
+  left: 0 !important;
+}
+
+[dir="rtl"] .ms-3 {
+  margin-right: 0 !important;
+  margin-left: 1rem !important;
+}
+
+[dir="rtl"] .me-3 {
+  margin-left: 0 !important;
+  margin-right: 1rem !important;
+}
+
+[dir="rtl"] .ms-2 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+
+[dir="rtl"] .me-2 {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+
+/* ============================================
+   📱 RESPONSIVE FONT SIZES
+   ============================================ */
+
+@media (max-width: 768px) {
+  .stat-card .stat-value {
+    font-size: 1.8rem;
+  }
+  
+  .display-1, .display-2, .display-3 {
+    font-size: 2.5rem;
+  }
+  
+  .match-card .match-score {
+    font-size: 1.5rem;
+  }
+  
+  .dashboard-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .stat-card .stat-value {
+    font-size: 1.5rem;
+  }
+  
+  .display-4, .display-5, .display-6 {
+    font-size: 1.8rem;
+  }
+  
+  h1, .h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2, .h2 {
+    font-size: 1.5rem;
+  }
+}
